@@ -1,5 +1,5 @@
 @echo off
-title GS-Nuker
+title Script-Scrapper
 set PYTHON=python
 
 if not "%PYTHON%" == "python" (
