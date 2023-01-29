@@ -13,3 +13,4 @@ if exist installer.py (
 ) else (
     %PYTHON% main.py
 )
+pause
