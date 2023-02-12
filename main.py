@@ -102,7 +102,7 @@ def search(query):
             try:
                 e.submit(scrape_page, link)
             except:
-                utils.error(f'{link} failed')
+                utils.fail(f'{link} failed')
     
 
 
