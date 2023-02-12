@@ -11,7 +11,7 @@ from time import sleep as wait
 import requests
 import threading
 import checker
-
+import os
 
 try:
     utils.os.system('taskkill /F /IM Firefox.exe')
@@ -28,6 +28,9 @@ scripts_found = []
 
 list_of_scripts = []
 
+os.mkdir(key.replace(' ', '-'))
+path = os.path.realpath(key.replace(' ', '-'))
+
 def scrape_page(url):
     utils.bprint(f'Looking in {url}')
     response = requests.get(url, timeout=10)
@@ -41,7 +44,7 @@ def scrape_page(url):
             if script not in list_of_scripts:
                 utils.success(f'Found script in {url} - {script}')
                 list_of_scripts.append(script)
-                with open(f'scripts-{key}.txt', 'a') as f:
+                with open(f'{path}/scripts.txt', 'a') as f:
                     f.write(script+'\n')
                     scripts_found.append(script)
 
@@ -112,7 +115,7 @@ utils.success('Done :sunglasses:')
 
 
 utils.bprint('Checking scripts')
-threads = [threading.Thread(target=checker.check_and_write, args=(string, key)) for string in list_of_scripts]
+threads = [threading.Thread(target=checker.check_and_write, args=(string, path)) for string in list_of_scripts]
 
 for thread in threads:
     thread.start()

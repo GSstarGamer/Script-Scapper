@@ -4,7 +4,7 @@ import PyUtls as utils
 
 utils.bprint('Started')
 
-def check_and_write(script, name):
+def check_and_write(script, path):
     match = re.search(r'"(https?://.*?)"', script)
     url = None
     if match:
@@ -17,7 +17,7 @@ def check_and_write(script, name):
     try:
         response = requests.get(url)
         if response.status_code != 404:
-            with open(f"valid_links {name}.txt", "a") as f:
+            with open(f"{path}/valid_links.txt", "a") as f:
                 f.write(script + "\n")
                 utils.success(script)
         else:
