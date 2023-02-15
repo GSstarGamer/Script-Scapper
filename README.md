@@ -26,6 +26,9 @@ Thanks to the Roblox Script Scraper, finding and gathering scripts has never bee
 1.  Clone or download this repository.
 2.  run `start.bat` file
 
+or 
+
+Just install the exe build and firefox and run the exe file
 ## Conclusion
 
 The Roblox Script Scraper is the ultimate tool & worlds first public roblox exploit tool for finding and gathering Roblox scripts. Whether you're a developer looking to add new features to your game, or a player looking to enhance your experience, this tool makes it easy for you to find the scripts you need. Give it a try today, and start exploring the endless possibilities of Roblox scripting!
